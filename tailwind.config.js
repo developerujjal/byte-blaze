@@ -7,7 +7,16 @@ export default {
   daisyui: {
     themes: ["light", "synthwave"],
   },
+  theme: {
+    extend: {
+      colors: {
+        primaryColor: '#EF1DD2', // Add your custom colors here
+        seconColor: '#4900FF',
+      },
+    },
+  },
   plugins: [
     require('daisyui'),
   ],
 }
+
