@@ -1,0 +1,6 @@
+.menu-main{
+    display: flex;
+    align-items: center;
+    min-height: 4rem;
+    width: 100%;
+}
