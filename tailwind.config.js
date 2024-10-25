@@ -12,6 +12,7 @@ export default {
       colors: {
         primaryColor: '#EF1DD2', // Add your custom colors here
         seconColor: '#4900FF',
+        bgColor: '#C5B6FF'
       },
     },
     keyframes: {

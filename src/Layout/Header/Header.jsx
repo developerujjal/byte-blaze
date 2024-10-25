@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
     const [theme, setTheme] = useState('light')
@@ -27,7 +27,7 @@ const Header = () => {
             <div className="container">
                 <div className="navbar bg-base-100 p-0 py-2">
                     <div className="flex-1">
-                        <a className="btn btn-ghost px-0 text-primaryColor gap-0 text-2xl font-semibold">Byte<span className="text-seconColor">Blaze</span></a>
+                        <Link to={'/'} className="btn btn-ghost px-0 text-primaryColor gap-0 text-2xl font-semibold">Byte<span className="text-seconColor">Blaze</span></Link>
                     </div>
                     <div className="flex gap-3">
                         <ul className="menu menu-horizontal px-1 font-bold flex gap-5">

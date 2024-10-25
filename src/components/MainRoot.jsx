@@ -3,7 +3,12 @@ import Header from "../Layout/Header/Header";
 import Footer from "../Layout/Footer/Footer";
 
 
+
 const MainRoot = () => {
+   
+
+
+
     return (
         <main>
             <header>
@@ -12,7 +17,7 @@ const MainRoot = () => {
             <div>
                 <Outlet></Outlet>
             </div>
-            
+
             <Footer></Footer>
         </main>
     );
