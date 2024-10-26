@@ -4,21 +4,23 @@ import { Link, NavLink } from "react-router-dom";
 const Header = () => {
     const [theme, setTheme] = useState('light')
 
-    useEffect(() => {
-        localStorage.setItem('theme', theme);
-        const getItem = localStorage.getItem('theme');
-        document.querySelector('html').setAttribute('data-theme', getItem)
-    }, [theme])
-
-    const handleToggle = (e) => {
-        const targetPath = e.target.checkbox;
-        if (targetPath) {
-            setTheme('synthwave')
+    const handleToggle = e => {
+        if (e.target.checked) {
+          setTheme('synthwave')
         } else {
-            setTheme('light')
+          setTheme('light')
         }
-    }
-
+      }
+    
+      // set theme state in localStorage on mount & also update localStorage on state change
+      useEffect(() => {
+        localStorage.setItem('theme', theme)
+        const localTheme = localStorage.getItem('theme')
+    
+        // add custom data-theme attribute
+        document.querySelector('html').setAttribute('data-theme', localTheme)
+      }, [theme])
+    
  
 
     return (
@@ -37,9 +39,8 @@ const Header = () => {
                         </ul>
                         <label className="grid cursor-pointer place-items-center">
                             <input
+                                type='checkbox'
                                 onChange={handleToggle}
-                                type="checkbox"
-                                value="synthwave"
                                 className="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1" />
                             <svg
                                 className="stroke-base-100 fill-base-100 col-start-1 row-start-1"
