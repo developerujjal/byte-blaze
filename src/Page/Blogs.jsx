@@ -6,9 +6,12 @@ import Spninner from "../components/Spninner/Spninner";
 const Blogs = () => {
     const blogsData = useLoaderData();
 
+    
     // loading Spinner
     const navigation = useNavigation();
-    if (navigation.state === 'loading') return <Spninner></Spninner>
+    if (navigation.state === 'loading'){
+        return <Spninner></Spninner>
+    }
 
     return (
         <section className="light:bg-gray-100 light:text-gray-800">
@@ -26,7 +29,7 @@ const Blogs = () => {
                 <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
                     {
-                        blogsData.map(iteamBlogCard => <BlogCard iteamCard={iteamBlogCard} key={iteamBlogCard.id}></BlogCard>)
+                        blogsData.slice(1, 19).map(iteamBlogCard => <BlogCard iteamCard={iteamBlogCard} key={iteamBlogCard.id}></BlogCard>)
                     }
                 </div>
 
